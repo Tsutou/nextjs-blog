@@ -1,5 +1,6 @@
 ---
 title: 'Two Forms of Pre-rendering'
+description: 'Next.js has two forms of pre-rendering'
 date: '2020-01-01'
 ---
 

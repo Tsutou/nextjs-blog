@@ -23,16 +23,20 @@ export default function Home({allPosts}) {
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Blog</h2>
                 <ul className={utilStyles.list}>
-                    {allPosts.map(({id, date, title}) => (
-                        <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/posts/${id}`}>
-                                <a>{title}</a>
-                            </Link>
-                            <br/>
-                            <small className={utilStyles.lightText}>
-                                <Date dateString={date}/>
-                            </small>
-                        </li>
+                    {allPosts.map(({id, date, title, description}) => (
+                        <Link href={`/posts/${id}`}>
+                            <div className={utilStyles.card}>
+                                <li className={utilStyles.listItem} key={id}>
+                                    <a className={utilStyles.headingLg}>{title}</a>
+                                    <br/>
+                                    <p className={utilStyles.lightText}>{description}</p>
+                                    <br/>
+                                    <small className={utilStyles.lightText}>
+                                        <Date dateString={date}/>
+                                    </small>
+                                </li>
+                            </div>
+                        </Link>
                     ))}
                 </ul>
             </section>
